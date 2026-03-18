@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { DEFAULT_CHILLERS } from '@/lib/data';
-import { CctvGrid } from '../cctv-grid';
+import { ChillerCameraPreview } from '../chiller-camera-preview';
 import type { ChillerData } from '@/lib/types';
 import {
   Thermometer,
@@ -162,8 +162,8 @@ export function ChillerStatusPage() {
       </div>
 
       {/* Chiller Grid & Detail */}
-{/* CCTV Monitoring */}
-      <CctvGrid compact />
+{/* Chiller CCTV Monitoring */}
+      <ChillerCameraPreview maxCameras={2} />
       <div className="grid grid-cols-3 gap-6">
         {/* Chiller List */}
         <div className="col-span-1 space-y-4">

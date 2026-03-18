@@ -3,8 +3,64 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Incheon Airport Heat Source Monitoring System - Dark Theme */
+/* Incheon Airport Heat Source Monitoring System - Light Theme (Default) */
 :root {
+  /* Light theme base - clean industrial monitoring style */
+  --background: oklch(0.98 0.005 240);
+  --foreground: oklch(0.15 0.01 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.01 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.01 240);
+  --primary: oklch(0.5 0.18 220);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.94 0.01 240);
+  --secondary-foreground: oklch(0.2 0.01 240);
+  --muted: oklch(0.94 0.005 240);
+  --muted-foreground: oklch(0.45 0.01 240);
+  --accent: oklch(0.94 0.01 220);
+  --accent-foreground: oklch(0.2 0.01 240);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.88 0.01 240);
+  --input: oklch(0.92 0.005 240);
+  --ring: oklch(0.5 0.18 220);
+
+  /* Status colors - optimized for light background */
+  --status-ok: oklch(0.55 0.2 145);
+  --status-caution: oklch(0.7 0.18 85);
+  --status-warn: oklch(0.6 0.2 50);
+  --status-danger: oklch(0.55 0.22 25);
+
+  /* Accent colors - optimized for light background */
+  --accent-blue: oklch(0.5 0.18 230);
+  --accent-green: oklch(0.5 0.2 145);
+  --accent-yellow: oklch(0.7 0.18 85);
+  --accent-red: oklch(0.55 0.22 25);
+  --accent-cyan: oklch(0.55 0.15 200);
+
+  /* Chart colors - optimized for light background */
+  --chart-1: oklch(0.5 0.18 220);
+  --chart-2: oklch(0.55 0.2 145);
+  --chart-3: oklch(0.7 0.18 85);
+  --chart-4: oklch(0.55 0.15 200);
+  --chart-5: oklch(0.55 0.22 25);
+
+  --radius: 0.5rem;
+
+  /* Sidebar - light theme */
+  --sidebar: oklch(0.97 0.005 240);
+  --sidebar-foreground: oklch(0.2 0.01 240);
+  --sidebar-primary: oklch(0.5 0.18 220);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.92 0.01 220);
+  --sidebar-accent-foreground: oklch(0.2 0.01 240);
+  --sidebar-border: oklch(0.88 0.01 240);
+  --sidebar-ring: oklch(0.5 0.18 220);
+}
+
+/* Dark Theme */
+.dark {
   /* Dark theme base - industrial monitoring style */
   --background: oklch(0.12 0.01 240);
   --foreground: oklch(0.95 0 0);
@@ -25,30 +81,28 @@
   --border: oklch(0.28 0.01 240);
   --input: oklch(0.2 0.01 240);
   --ring: oklch(0.55 0.18 220);
-  
-  /* Status colors */
+
+  /* Status colors - dark theme */
   --status-ok: oklch(0.7 0.2 145);
   --status-caution: oklch(0.8 0.18 85);
   --status-warn: oklch(0.7 0.2 50);
   --status-danger: oklch(0.6 0.22 25);
-  
-  /* Accent colors */
+
+  /* Accent colors - dark theme */
   --accent-blue: oklch(0.6 0.18 230);
   --accent-green: oklch(0.65 0.2 145);
   --accent-yellow: oklch(0.8 0.18 85);
   --accent-red: oklch(0.6 0.22 25);
   --accent-cyan: oklch(0.7 0.15 200);
-  
-  /* Chart colors */
+
+  /* Chart colors - dark theme */
   --chart-1: oklch(0.65 0.18 220);
   --chart-2: oklch(0.7 0.2 145);
   --chart-3: oklch(0.8 0.18 85);
   --chart-4: oklch(0.7 0.15 200);
   --chart-5: oklch(0.6 0.22 25);
-  
-  --radius: 0.5rem;
-  
-  /* Sidebar */
+
+  /* Sidebar - dark theme */
   --sidebar: oklch(0.14 0.01 240);
   --sidebar-foreground: oklch(0.9 0 0);
   --sidebar-primary: oklch(0.65 0.18 220);

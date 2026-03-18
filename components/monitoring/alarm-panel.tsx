@@ -128,7 +128,7 @@ export function AlarmPanel({ compact = false }: AlarmPanelProps) {
       </div>
 
       {/* Alarm List */}
-      <div className={cn('space-y-3 p-4', compact && 'max-h-80 overflow-y-auto')}>
+      <div className="space-y-3 p-4">
         {displayAlarms.map((alarm) => (
           <AlarmItem key={alarm.id} alarm={alarm} />
         ))}
