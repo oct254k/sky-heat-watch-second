@@ -8,9 +8,10 @@ import { Camera, Maximize2, Video, AlertTriangle, CheckCircle2 } from 'lucide-re
 interface ChillerCameraPreviewProps {
   className?: string;
   maxCameras?: number;
+  layout?: 'horizontal' | 'vertical';
 }
 
-export function ChillerCameraPreview({ className, maxCameras = 2 }: ChillerCameraPreviewProps) {
+export function ChillerCameraPreview({ className, maxCameras = 2, layout = 'horizontal' }: ChillerCameraPreviewProps) {
   const [cameras, setCameras] = useState<CameraConfigItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -48,7 +49,7 @@ export function ChillerCameraPreview({ className, maxCameras = 2 }: ChillerCamer
           <Video className="h-5 w-5 text-primary" />
           <h3 className="font-semibold text-foreground">냉동기 실시간 모니터링</h3>
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className={cn('grid gap-3', layout === 'vertical' ? 'grid-cols-1' : 'grid-cols-2')}>
           {[1, 2].map((i) => (
             <div key={i} className="aspect-video bg-muted animate-pulse rounded-lg" />
           ))}
@@ -86,7 +87,7 @@ export function ChillerCameraPreview({ className, maxCameras = 2 }: ChillerCamer
 
       <div className={cn(
         'grid gap-3',
-        cameras.length === 1 ? 'grid-cols-1' : 'grid-cols-2'
+        layout === 'vertical' ? 'grid-cols-1' : (cameras.length === 1 ? 'grid-cols-1' : 'grid-cols-2')
       )}>
         {cameras.map((camera) => (
           <ChillerCameraCard key={camera.id} camera={camera} />

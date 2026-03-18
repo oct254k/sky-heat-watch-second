@@ -161,26 +161,29 @@ export function ChillerStatusPage() {
         </div>
       </div>
 
-      {/* Chiller Grid & Detail */}
-{/* Chiller CCTV Monitoring */}
-      <ChillerCameraPreview maxCameras={2} />
+      {/* Row 2: Chiller List - 가로 배열 */}
+      <div className="space-y-4">
+        <h3 className="font-semibold text-foreground">냉동기 목록</h3>
+        <div className="grid grid-cols-4 gap-4">
+          {DEFAULT_CHILLERS.map((chiller) => (
+            <DetailedChillerCard
+              key={chiller.id}
+              chiller={chiller}
+              isSelected={chiller.id === selectedChiller.id}
+              onClick={() => {}}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Row 3: CCTV + Detail Panel */}
       <div className="grid grid-cols-3 gap-6">
-        {/* Chiller List */}
-        <div className="col-span-1 space-y-4">
-          <h3 className="font-semibold text-foreground">냉동기 목록</h3>
-          <div className="space-y-3">
-            {DEFAULT_CHILLERS.map((chiller) => (
-              <DetailedChillerCard
-                key={chiller.id}
-                chiller={chiller}
-                isSelected={chiller.id === selectedChiller.id}
-                onClick={() => {}}
-              />
-            ))}
-          </div>
+        {/* 좌측: CCTV 세로 배열 */}
+        <div className="col-span-1">
+          <ChillerCameraPreview maxCameras={2} layout="vertical" />
         </div>
 
-        {/* Detail Panel */}
+        {/* 우측: Detail Panel */}
         <div className="col-span-2 space-y-4">
           <div className="rounded-xl border border-border bg-card p-6">
             <div className="flex items-center justify-between">
