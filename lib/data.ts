@@ -13,6 +13,7 @@ export const PAGE_TITLES: Record<string, PageTitle> = {
   p7: { title: '연동 현황', subtitle: 'BEMS·DDC·Century 연동 상태' },
   p8: { title: '점검일지', subtitle: '자동 생성 점검일지 관리' },
   p9: { title: 'AI 챗봇', subtitle: 'AI 운영 어시스턴트' },
+  p10: { title: 'AI 예측 분석', subtitle: 'AI 기반 장비 고장 예측 및 수명 관리' },
 };
 
 // 네비게이션 그룹 데이터
@@ -43,6 +44,7 @@ export const NAVIGATION_GROUPS: NavGroup[] = [
     label: 'AI 지원',
     items: [
       { id: 'p9', label: 'AI 챗봇', icon: 'chat' },
+      { id: 'p10', label: 'AI 예측 분석', icon: 'brain' },
     ],
   },
   {

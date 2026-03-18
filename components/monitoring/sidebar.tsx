@@ -16,6 +16,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Plane,
+  Brain,
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ElementType> = {
@@ -28,6 +29,7 @@ const iconMap: Record<string, React.ElementType> = {
   document: FileText,
   chat: MessageSquare,
   link: Link2,
+  brain: Brain,
 };
 
 interface SidebarProps {

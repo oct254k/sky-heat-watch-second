@@ -16,6 +16,7 @@ import { ThresholdSettingsPage } from './pages/threshold-settings';
 import { IntegrationStatusPage } from './pages/integration-status';
 import { InspectionLogPage } from './pages/inspection-log';
 import { AiChatbotPage } from './pages/ai-chatbot';
+import { AiPredictionPage } from './pages/ai-prediction';
 
 const pageComponents: Record<PageId, React.ComponentType> = {
   p1: DashboardPage,
@@ -27,6 +28,7 @@ const pageComponents: Record<PageId, React.ComponentType> = {
   p7: IntegrationStatusPage,
   p8: InspectionLogPage,
   p9: AiChatbotPage,
+  p10: AiPredictionPage,
 };
 
 export function MonitoringLayout() {

@@ -1,7 +1,7 @@
 // 인천공항 열원사업소 AI 모니터링 시스템 타입 정의
 
 // 페이지 ID
-export type PageId = 'p1' | 'p2' | 'p3' | 'p4' | 'p5' | 'p6' | 'p7' | 'p8' | 'p9';
+export type PageId = 'p1' | 'p2' | 'p3' | 'p4' | 'p5' | 'p6' | 'p7' | 'p8' | 'p9' | 'p10';
 
 // 알람 레벨
 export type AlarmLevel = 'ok' | 'caution' | 'warn' | 'danger';
