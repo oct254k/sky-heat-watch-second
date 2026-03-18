@@ -270,11 +270,11 @@ export function ChillerStatusPage() {
         </div>
       </div>
 
-      {/* Row 3: Chiller List - 가로 배열 */}
+      {/* Row 3: Chiller List - 가로 배열 (최대 6개) */}
       <div className="space-y-4">
         <h3 className="font-semibold text-foreground">냉동기 목록</h3>
-        <div className="grid grid-cols-4 gap-4">
-          {DEFAULT_CHILLERS.map((chiller) => (
+        <div className="grid grid-cols-6 gap-4">
+          {DEFAULT_CHILLERS.slice(0, 6).map((chiller) => (
             <DetailedChillerCard
               key={chiller.id}
               chiller={chiller}
