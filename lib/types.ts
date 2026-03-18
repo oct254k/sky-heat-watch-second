@@ -18,7 +18,7 @@ export const ALARM_LEVEL_CONFIG = {
 export type SensorStatus = 'ok' | 'warn' | 'danger' | 'offline';
 
 // 카메라 카테고리
-export type CameraCategory = 'all' | 'coolingTower' | 'fan';
+export type CameraCategory = 'all' | 'chiller' | 'coolingTower' | 'fan';
 
 // CCTV 카메라 인터페이스
 export interface CctvCamera {

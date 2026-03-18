@@ -55,98 +55,161 @@ export const NAVIGATION_GROUPS: NavGroup[] = [
 
 // CCTV 탭 데이터
 export const CCTV_TABS = [
-  { key: 'all' as const, label: '전체', count: 8 },
-  { key: 'coolingTower' as const, label: '냉각탑', count: 4 },
-  { key: 'fan' as const, label: '팬류', count: 4 },
+  { key: 'all' as const, label: '전체', count: 12 },
+  { key: 'chiller' as const, label: '냉동기', count: 6 },
+  { key: 'coolingTower' as const, label: '냉각탑', count: 2 },
+  { key: 'fan' as const, label: '팬류/공조기', count: 4 },
 ];
 
-// CCTV 카메라 데이터
+// CCTV 카메라 데이터 (열원사업소 12대: 냉동기 6대 + 냉각탑 2대 + 팬류/공조기 4대)
 export const DEFAULT_CAMERAS: CctvCamera[] = [
+  // AICC 건물 - 냉동기 (2대)
   {
     id: 'CAM-01',
-    name: '냉각탑 #1',
-    location: 'AICC',
+    name: '냉동기 #1',
+    location: '스크류냉동기',
     zone: 'AICC',
     type: 'fixed',
     status: 'normal',
     aiStatus: 'n',
-    category: 'coolingTower',
+    value: '82.24 USRT',
+    category: 'chiller',
     imageUrl: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80&auto=format&fit=crop',
   },
   {
     id: 'CAM-02',
-    name: '냉각탑 #2',
-    location: 'AICC',
+    name: '냉동기 #2',
+    location: '스크류냉동기',
     zone: 'AICC',
     type: 'fixed',
     status: 'normal',
     aiStatus: 'n',
-    category: 'coolingTower',
+    value: '82.24 USRT',
+    category: 'chiller',
     imageUrl: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80&auto=format&fit=crop',
   },
+  // AICC 건물 - 냉각탑 (1대)
   {
     id: 'CAM-03',
-    name: '냉각탑 #3',
-    location: '관제탑',
+    name: '냉각탑',
+    location: '냉각탑 설비',
+    zone: 'AICC',
+    type: 'ptz',
+    status: 'normal',
+    aiStatus: 'n',
+    value: '32°C',
+    category: 'coolingTower',
+    imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop',
+  },
+  // 관제탑 건물 - 냉동기 (2대)
+  {
+    id: 'CAM-04',
+    name: '냉동기 #1',
+    location: '스크류냉동기',
     zone: '관제탑',
     type: 'fixed',
     status: 'normal',
     aiStatus: 'n',
-    category: 'coolingTower',
-    imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop',
-  },
-  {
-    id: 'CAM-04',
-    name: '냉각탑 #4',
-    location: '공항청사',
-    zone: '공항청사',
-    type: 'fixed',
-    status: 'normal',
-    aiStatus: 'n',
-    category: 'coolingTower',
+    value: '40 USRT',
+    category: 'chiller',
     imageUrl: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80&auto=format&fit=crop',
   },
   {
     id: 'CAM-05',
-    name: '팬류 F-01',
-    location: 'AICC',
+    name: '냉동기 #2',
+    location: '스크류냉동기',
+    zone: '관제탑',
+    type: 'fixed',
+    status: 'warning',
+    aiStatus: 'w',
+    value: '40 USRT',
+    aiDetail: '압력 이상 징후',
+    category: 'chiller',
+    imageUrl: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80&auto=format&fit=crop',
+  },
+  // 관제탑 건물 - 팬류/공조기 (1대)
+  {
+    id: 'CAM-06',
+    name: '팬류/공조기',
+    location: '팬류 설비',
+    zone: '관제탑',
+    type: 'ptz',
+    status: 'normal',
+    aiStatus: 'n',
+    category: 'fan',
+    imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop',
+  },
+  // 공항청사 건물 - 냉동기 (2대)
+  {
+    id: 'CAM-07',
+    name: '냉동기 #1',
+    location: '스크류냉동기',
+    zone: '공항청사',
+    type: 'fixed',
+    status: 'danger',
+    aiStatus: 'd',
+    value: '60.19 USRT',
+    aiDetail: '이상 감지',
+    category: 'chiller',
+    imageUrl: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80&auto=format&fit=crop',
+  },
+  {
+    id: 'CAM-08',
+    name: '냉동기 #2',
+    location: '스크류냉동기',
+    zone: '공항청사',
+    type: 'fixed',
+    status: 'normal',
+    aiStatus: 'n',
+    value: '60.19 USRT',
+    category: 'chiller',
+    imageUrl: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80&auto=format&fit=crop',
+  },
+  // 공항청사 건물 - 냉각탑 (1대)
+  {
+    id: 'CAM-09',
+    name: '냉각탑',
+    location: '냉각탑 설비',
+    zone: '공항청사',
+    type: 'ptz',
+    status: 'normal',
+    aiStatus: 'n',
+    value: '30°C',
+    category: 'coolingTower',
+    imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop',
+  },
+  // AICC 건물 - 팬류/공조기 (2대)
+  {
+    id: 'CAM-10',
+    name: '공조기 #1',
+    location: 'AHU 설비',
     zone: 'AICC',
     type: 'fixed',
     status: 'warning',
     aiStatus: 'w',
     aiDetail: '회전 과속 (+15% RPM)',
-    value: '회전 과속',
+    value: '과속 경고',
     category: 'fan',
     imageUrl: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80&auto=format&fit=crop',
   },
   {
-    id: 'CAM-06',
-    name: '팬류 F-02',
-    location: 'AICC',
+    id: 'CAM-11',
+    name: '공조기 #2',
+    location: 'AHU 설비',
     zone: 'AICC',
     type: 'fixed',
     status: 'normal',
     aiStatus: 'n',
     category: 'fan',
-    imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80&auto=format&fit=crop',
   },
+  // 공항청사 건물 - 팬류/공조기 (1대)
   {
-    id: 'CAM-07',
-    name: '팬류 F-03',
-    location: '관제탑',
-    zone: '관제탑',
-    type: 'fixed',
-    status: 'normal',
-    aiStatus: 'n',
-    category: 'fan',
-    imageUrl: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80&auto=format&fit=crop',
-  },
-  {
-    id: 'CAM-08',
-    name: '팬류 F-04',
-    location: '공항청사',
+    id: 'CAM-12',
+    name: '팬류/공조기',
+    location: '팬류 설비',
     zone: '공항청사',
-    type: 'fixed',
+    type: 'ptz',
     status: 'normal',
     aiStatus: 'n',
     category: 'fan',
@@ -287,6 +350,38 @@ export const DEFAULT_CHILLERS: ChillerData[] = [
     chilledWaterOut: 0,
   },
 ];
+
+// 카메라 설정 파일 타입 (camera_config.json)
+export interface CameraConfigItem {
+  id: string;
+  name: string;
+  building: string;
+  equipment: string;
+  customImage?: string; // base64 인코딩된 이미지
+  rois?: {
+    id: string;
+    name: string;
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    color: string;
+  }[];
+  thresholds?: {
+    tempWarning: number;
+    tempDanger: number;
+    vibrationWarning: number;
+    vibrationDanger: number;
+  };
+}
+
+export interface CameraConfig {
+  cameras: CameraConfigItem[];
+}
+
+// 냉동기 모니터링용 카메라 ID 목록 (p3 냉동기 현황 페이지용)
+// camera_config.json에서 냉동기 관련 카메라만 필터링하여 표시
+export const CHILLER_CAMERA_IDS = ['CAM-01', 'CAM-02']; // AICC 냉동기 #1, #2
 
 // 빠른 질문 데이터 (시나리오 기반)
 export const QUICK_QUESTIONS = [
